@@ -8,16 +8,19 @@ class ValidadorDeSenhaComposite implements ValidadorDeSenha
 
     function __construct($validadores)
     {
+
+        foreach ($validadores as $validador) {
+            if (!$validador instanceof ValidadorDeSenha) {
+                throw new Exception("Tipo de validador invalido");
+            }
+        }
+
         $this->validadores = $validadores;
     }
 
     public function validar($senha)
     {
         foreach ($this->validadores as $validador) {
-            if (!$validador instanceof ValidadorDeSenha) {
-                throw new Exception("Tipo de validador invalido");
-            }
-
             if (!$validador->validar($senha)) {
                 return false;
             }
