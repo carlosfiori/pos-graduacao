@@ -22,7 +22,7 @@ $cofre3 = new Cofre("QQWQWERTY2Q", new ValidadorDeSenhaMaiorQueAlfaNumericaMaius
 
 $cofre4 = new Cofre("aasdasdasd2", new ValidadorDeSenhaComposite([new ValidadorDeSenhaTemLetras(), new ValidadorDeSenhaTemNumero()]));
 
-$cofreSemValidacao = new Cofre('aaaaa', new ValidadorDeSenhaSemValidacao());
+$cofreSemValidacao = new Cofre('aaaaa');
 
 $cofreSemValidacao->abrir('aaaaa');
 
