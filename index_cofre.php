@@ -1,6 +1,5 @@
 <?php
 echo "<pre>";
-ini_set('display_errors', 1);
 
 require_once "./Source/Cofre/SenhaIncorretaException.php";
 require_once "./Source/Cofre/Senha.php";
