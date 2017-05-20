@@ -16,39 +16,11 @@ require_once "./Source/ValidadorDeSenhaComposite.php";
 require_once "./Source/ValidadorDeSenhaTemLetras.php";
 require_once "./Source/ValidadorDeSenhaTemNumero.php";
 require_once "./Source/ValidadorDeSenhaSemValidacao.php";
+require_once "./Source/CofreFactory.php";
 
 
-$cofre = new Cofre("adssd23", new ValidadorDeSenhaMaiorQue(6));
-
-$cofre2 = new Cofre("poiuyt2", new ValidadorDeSenhaMaiorQueAlfaNumerica(6));
-
-$cofre3 = new Cofre("QQWQWERTY2Q", new ValidadorDeSenhaMaiorQueAlfaNumericaMaiusculo(10));
-
-$cofre4 = new Cofre("aasdasdasd2", new ValidadorDeSenhaComposite([new ValidadorDeSenhaTemLetras(), new ValidadorDeSenhaTemNumero()]));
-
-$cofreSemValidacao = new Cofre('aaaaa');
-
-$cofreSemValidacao->abrir('aaaaa');
-
-
-//echo '<br>';
-//$cofre->abrir("adssd23");
-//echo '<br>';
-//$cofre->fechar("adssd23");
-//echo '<br>';
-//
-//$cofre2->abrir("poiuyt2");
-//echo '<br>';
-//$cofre2->fechar("poiuyt2");
-//echo '<br>';
-//
-//$cofre3->abrir("QQWQWERTY2Q");
-//echo '<br>';
-//$cofre3->fechar("QQWQWERTY2Q");
-//
-//echo '<br>';
-//$cofre4->abrir("aasdasdasd2");
-//echo '<br>';
-//$cofre4->fechar("aasdasdasd2");
-
+$cofreSemValidacao = CofreFactory::criarCofreSemValidacao('aaaaa');
+//$cofreSemValidacao->abrir('aaaaa');
+$cofreComValidacao = CofreFactory::criarCofreComValidacao('qwe1', new ValidadorDeSenhaTemNumero());
+//$cofreComValidacao->abrir('qwe1');
 
