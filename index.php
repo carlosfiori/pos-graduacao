@@ -2,6 +2,10 @@
 //echo "<pre>";
 ini_set('display_errors', 1);
 
+require_once "./Source/SenhaIncorretaException.php";
+require_once "./Source/Senha.php";
+require_once "./Source/CoisaSeguraComAbrirEFechar.php";
+require_once "./Source/ValidadorDeSenha.php";
 require_once "./Source/Cofre.php";
 require_once "./Source/Senha.php";
 require_once "./Source/Maleta.php";
