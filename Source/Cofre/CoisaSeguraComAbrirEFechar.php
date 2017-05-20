@@ -14,7 +14,7 @@ trait CoisaSeguraComAbrirEFechar
             throw new SenhaIncorretaException();
         }
 
-        echo 'Abriu';
+        echo 'Abriu<br>';
 
         $this->aberto = true;
     }
@@ -25,7 +25,7 @@ trait CoisaSeguraComAbrirEFechar
             throw new SenhaIncorretaException();
         }
 
-        echo 'Fechou';
+        echo 'Fechou<br>';
         $this->aberto = false;
     }
 }

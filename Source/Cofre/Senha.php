@@ -1,11 +1,5 @@
 <?php
 
-/**
- * Created by PhpStorm.
- * User: Carlos Fiori
- * Date: 13/05/2017
- * Time: 10:59
- */
 class Senha
 {
     private $valor;
