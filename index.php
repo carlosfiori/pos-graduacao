@@ -11,6 +11,7 @@ require_once "./Source/ValidadorDeSenhaMaiorQueAlfaNumericaMaiusculo.php";
 require_once "./Source/ValidadorDeSenhaComposite.php";
 require_once "./Source/ValidadorDeSenhaTemLetras.php";
 require_once "./Source/ValidadorDeSenhaTemNumero.php";
+require_once "./Source/ValidadorDeSenhaSemValidacao.php";
 
 
 $cofre = new Cofre("adssd23", new ValidadorDeSenhaMaiorQue(6));
@@ -21,24 +22,29 @@ $cofre3 = new Cofre("QQWQWERTY2Q", new ValidadorDeSenhaMaiorQueAlfaNumericaMaius
 
 $cofre4 = new Cofre("aasdasdasd2", new ValidadorDeSenhaComposite([new ValidadorDeSenhaTemLetras(), new ValidadorDeSenhaTemNumero()]));
 
-echo '<br>';
-$cofre->abrir("adssd23");
-echo '<br>';
-$cofre->fechar("adssd23");
-echo '<br>';
+$cofreSemValidacao = new Cofre('aaaaa', new ValidadorDeSenhaSemValidacao());
 
-$cofre2->abrir("poiuyt2");
-echo '<br>';
-$cofre2->fechar("poiuyt2");
-echo '<br>';
+$cofreSemValidacao->abrir('aaaaa');
 
-$cofre3->abrir("QQWQWERTY2Q");
-echo '<br>';
-$cofre3->fechar("QQWQWERTY2Q");
 
-echo '<br>';
-$cofre4->abrir("aasdasdasd2");
-echo '<br>';
-$cofre4->fechar("aasdasdasd2");
+//echo '<br>';
+//$cofre->abrir("adssd23");
+//echo '<br>';
+//$cofre->fechar("adssd23");
+//echo '<br>';
+//
+//$cofre2->abrir("poiuyt2");
+//echo '<br>';
+//$cofre2->fechar("poiuyt2");
+//echo '<br>';
+//
+//$cofre3->abrir("QQWQWERTY2Q");
+//echo '<br>';
+//$cofre3->fechar("QQWQWERTY2Q");
+//
+//echo '<br>';
+//$cofre4->abrir("aasdasdasd2");
+//echo '<br>';
+//$cofre4->fechar("aasdasdasd2");
 
 
